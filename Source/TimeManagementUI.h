@@ -3,6 +3,7 @@
 //  TimeManagementUI
 //
 //  Created by Jonas Maier on 10.03.19.
+//  Copyright © 2019 Jonas Maier. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
