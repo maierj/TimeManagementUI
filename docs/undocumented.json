@@ -1,0 +1,369 @@
+{
+  "warnings": [
+    {
+      "file": "/Users/jonasmaier/Documents/Private/TimeManagementUI/Source/CalendarViewController.swift",
+      "line": null,
+      "symbol": "CalendarViewController",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jonasmaier/Documents/Private/TimeManagementUI/Source/CalendarViewController.swift",
+      "line": null,
+      "symbol": "CalendarViewController",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jonasmaier/Documents/Private/TimeManagementUI/Source/CalendarViewController.swift",
+      "line": 12,
+      "symbol": "CalendarViewController",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jonasmaier/Documents/Private/TimeManagementUI/Source/CalendarViewController.swift",
+      "line": 54,
+      "symbol": "CalendarViewController.init(configuration:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jonasmaier/Documents/Private/TimeManagementUI/Source/CalendarViewController.swift",
+      "line": 239,
+      "symbol": "CalendarViewController.numberOfSections(in:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jonasmaier/Documents/Private/TimeManagementUI/Source/CalendarViewController.swift",
+      "line": 243,
+      "symbol": "CalendarViewController.collectionView(_:numberOfItemsInSection:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jonasmaier/Documents/Private/TimeManagementUI/Source/CalendarViewController.swift",
+      "line": 247,
+      "symbol": "CalendarViewController.collectionView(_:cellForItemAt:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jonasmaier/Documents/Private/TimeManagementUI/Source/CalendarViewController.swift",
+      "line": 287,
+      "symbol": "CalendarViewController.collectionView(_:layout:sizeForItemAt:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jonasmaier/Documents/Private/TimeManagementUI/Source/CalendarViewController.swift",
+      "line": 298,
+      "symbol": "CalendarViewController.collectionView(_:layout:insetForSectionAt:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jonasmaier/Documents/Private/TimeManagementUI/Source/CalendarViewController.swift",
+      "line": 302,
+      "symbol": "CalendarViewController.collectionView(_:layout:minimumInteritemSpacingForSectionAt:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jonasmaier/Documents/Private/TimeManagementUI/Source/CalendarViewController.swift",
+      "line": 306,
+      "symbol": "CalendarViewController.collectionView(_:layout:minimumLineSpacingForSectionAt:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jonasmaier/Documents/Private/TimeManagementUI/Source/CalendarViewController.swift",
+      "line": 310,
+      "symbol": "CalendarViewController.collectionView(_:didSelectItemAt:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jonasmaier/Documents/Private/TimeManagementUI/Source/CalendarViewController.swift",
+      "line": 341,
+      "symbol": "CalendarViewController.collectionView(_:didDeselectItemAt:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jonasmaier/Documents/Private/TimeManagementUI/Source/CalendarViewControllerConfiguration.swift",
+      "line": 12,
+      "symbol": "CalendarViewControllerConfiguration",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jonasmaier/Documents/Private/TimeManagementUI/Source/CalendarViewControllerConfiguration.swift",
+      "line": 14,
+      "symbol": "CalendarViewControllerConfiguration.DateSelectionMode",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jonasmaier/Documents/Private/TimeManagementUI/Source/CalendarViewControllerConfiguration.swift",
+      "line": 15,
+      "symbol": "CalendarViewControllerConfiguration.DateSelectionMode.none",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jonasmaier/Documents/Private/TimeManagementUI/Source/CalendarViewControllerConfiguration.swift",
+      "line": 15,
+      "symbol": "CalendarViewControllerConfiguration.DateSelectionMode.range(allowsMultipleRangeSelections:)",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jonasmaier/Documents/Private/TimeManagementUI/Source/CalendarViewControllerConfiguration.swift",
+      "line": 15,
+      "symbol": "CalendarViewControllerConfiguration.DateSelectionMode.single(allowsMultipleSingleSelections:)",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jonasmaier/Documents/Private/TimeManagementUI/Source/CalendarViewControllerConfiguration.swift",
+      "line": 21,
+      "symbol": "CalendarViewControllerConfiguration.init(dateCellStyleProvider:selectionMode:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jonasmaier/Documents/Private/TimeManagementUI/Source/DateCellMagnifierView.swift",
+      "line": 12,
+      "symbol": "DateCellMagnifierView",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jonasmaier/Documents/Private/TimeManagementUI/Source/DateCellSelectionMode.swift",
+      "line": 11,
+      "symbol": "DateCellSelectionMode",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jonasmaier/Documents/Private/TimeManagementUI/Source/DateCellSelectionMode.swift",
+      "line": 12,
+      "symbol": "DateCellSelectionMode.none",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jonasmaier/Documents/Private/TimeManagementUI/Source/DateCellSelectionMode.swift",
+      "line": 12,
+      "symbol": "DateCellSelectionMode.rangeEnd",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jonasmaier/Documents/Private/TimeManagementUI/Source/DateCellSelectionMode.swift",
+      "line": 12,
+      "symbol": "DateCellSelectionMode.rangeMiddle",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jonasmaier/Documents/Private/TimeManagementUI/Source/DateCellSelectionMode.swift",
+      "line": 12,
+      "symbol": "DateCellSelectionMode.rangeStart",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jonasmaier/Documents/Private/TimeManagementUI/Source/DateCellSelectionMode.swift",
+      "line": 12,
+      "symbol": "DateCellSelectionMode.single",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jonasmaier/Documents/Private/TimeManagementUI/Source/DateCellState.swift",
+      "line": 11,
+      "symbol": "DateCellState",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jonasmaier/Documents/Private/TimeManagementUI/Source/DateCellState.swift",
+      "line": 13,
+      "symbol": "DateCellState.date",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jonasmaier/Documents/Private/TimeManagementUI/Source/DateCellState.swift",
+      "line": 14,
+      "symbol": "DateCellState.dateText",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jonasmaier/Documents/Private/TimeManagementUI/Source/DateCellState.swift",
+      "line": 15,
+      "symbol": "DateCellState.monthText",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jonasmaier/Documents/Private/TimeManagementUI/Source/DateCellState.swift",
+      "line": 16,
+      "symbol": "DateCellState.hasAlternatingColor",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jonasmaier/Documents/Private/TimeManagementUI/Source/DateCellStyleProvider.swift",
+      "line": null,
+      "symbol": "DateCellStyleProvider",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jonasmaier/Documents/Private/TimeManagementUI/Source/DateCellStyleProvider.swift",
+      "line": 12,
+      "symbol": "DateCellSelectionCornerStyle",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jonasmaier/Documents/Private/TimeManagementUI/Source/DateCellStyleProvider.swift",
+      "line": 13,
+      "symbol": "DateCellSelectionCornerStyle.rectangular",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jonasmaier/Documents/Private/TimeManagementUI/Source/DateCellStyleProvider.swift",
+      "line": 13,
+      "symbol": "DateCellSelectionCornerStyle.rounded",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jonasmaier/Documents/Private/TimeManagementUI/Source/DateCellStyleProvider.swift",
+      "line": 16,
+      "symbol": "DateCellStyleProvider",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jonasmaier/Documents/Private/TimeManagementUI/Source/DateCellStyleProvider.swift",
+      "line": 18,
+      "symbol": "DateCellStyleProvider.alternatingMonthBackgroundColor1",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jonasmaier/Documents/Private/TimeManagementUI/Source/DateCellStyleProvider.swift",
+      "line": 19,
+      "symbol": "DateCellStyleProvider.alternatingMonthBackgroundColor2",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jonasmaier/Documents/Private/TimeManagementUI/Source/DateCellStyleProvider.swift",
+      "line": 21,
+      "symbol": "DateCellStyleProvider.applyDefaultStyle(to:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jonasmaier/Documents/Private/TimeManagementUI/Source/DateCellStyleProvider.swift",
+      "line": 22,
+      "symbol": "DateCellStyleProvider.applySingleSelectionStyle(to:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jonasmaier/Documents/Private/TimeManagementUI/Source/DateCellStyleProvider.swift",
+      "line": 23,
+      "symbol": "DateCellStyleProvider.applyRangeSelectionStartStyle(to:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jonasmaier/Documents/Private/TimeManagementUI/Source/DateCellStyleProvider.swift",
+      "line": 24,
+      "symbol": "DateCellStyleProvider.applyRangeSelectionMiddleStyle(to:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jonasmaier/Documents/Private/TimeManagementUI/Source/DateCellStyleProvider.swift",
+      "line": 25,
+      "symbol": "DateCellStyleProvider.applyRangeSelectionEndStyle(to:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jonasmaier/Documents/Private/TimeManagementUI/Source/DateCellStyleProvider.swift",
+      "line": 30,
+      "symbol": "DateCellStyleProvider.alternatingMonthBackgroundColor1",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jonasmaier/Documents/Private/TimeManagementUI/Source/DateCellStyleProvider.swift",
+      "line": 34,
+      "symbol": "DateCellStyleProvider.alternatingMonthBackgroundColor2",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jonasmaier/Documents/Private/TimeManagementUI/Source/DateCollectionCell.swift",
+      "line": 12,
+      "symbol": "DateCollectionCell",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jonasmaier/Documents/Private/TimeManagementUI/Source/DateCollectionCell.swift",
+      "line": 14,
+      "symbol": "DateCollectionCell.selectionIndicator",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jonasmaier/Documents/Private/TimeManagementUI/Source/DateCollectionCell.swift",
+      "line": 16,
+      "symbol": "DateCollectionCell.monthLabel",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jonasmaier/Documents/Private/TimeManagementUI/Source/DateCollectionCell.swift",
+      "line": 17,
+      "symbol": "DateCollectionCell.dateLabel",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jonasmaier/Documents/Private/TimeManagementUI/Source/DateCollectionCell.swift",
+      "line": 19,
+      "symbol": "DateCollectionCell.state",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jonasmaier/Documents/Private/TimeManagementUI/Source/DateCollectionCell.swift",
+      "line": 21,
+      "symbol": "DateCollectionCell.isSelected",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jonasmaier/Documents/Private/TimeManagementUI/Source/WeekdaysHeaderView.swift",
+      "line": 12,
+      "symbol": "WeekdaysHeaderView",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    }
+  ],
+  "source_directory": "/Users/jonasmaier/Documents/Private/TimeManagementUI"
+}

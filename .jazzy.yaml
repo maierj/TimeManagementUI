@@ -1,0 +1,8 @@
+author: Jonas Maier
+author_url: https://github.com/maierj
+github_url: https://github.com/maierj
+root_url: https://maierj.github.io/TimeManagementUI/
+module: TimeManagementUI
+output: docs
+theme: fullwidth
+xcodebuild_arguments: [-workspace, 'TimeManagementUI.xcworkspace', -scheme, 'TimeManagementUI']
