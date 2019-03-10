@@ -18,8 +18,6 @@ s.source = { :git => "https://github.com/maierj/TimeManagementUI.git",
              :tag => "#{s.version}" }
 
 s.framework = "UIKit"
-s.dependency 'Alamofire', '~> 4.7'
-s.dependency 'MBProgressHUD', '~> 1.1.0'
 
 s.source_files = "Source/*.{swift}"
 
