@@ -3,7 +3,7 @@
 //  TimeManagementUIExamples
 //
 //  Created by Jonas Maier on 09.03.19.
-//  Copyright © 2019 adabay GmbH. All rights reserved.
+//  Copyright © 2019 Jonas Maier. All rights reserved.
 //
 
 import Foundation

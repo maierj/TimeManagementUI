@@ -156,7 +156,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 1010;
 				LastUpgradeCheck = 1010;
-				ORGANIZATIONNAME = "adabay GmbH";
+				ORGANIZATIONNAME = "Jonas Maier";
 				TargetAttributes = {
 					2CD22635221F500600A2F030 = {
 						CreatedOnToolsVersion = 10.1;
