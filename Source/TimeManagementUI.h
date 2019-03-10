@@ -15,5 +15,3 @@ FOUNDATION_EXPORT double TimeManagementUIVersionNumber;
 FOUNDATION_EXPORT const unsigned char TimeManagementUIVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <TimeManagementUI/PublicHeader.h>
-
-

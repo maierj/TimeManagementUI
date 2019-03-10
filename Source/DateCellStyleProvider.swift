@@ -9,11 +9,11 @@
 import Foundation
 import UIKit
 
-enum DateCellSelectionCornerStyle {
+public enum DateCellSelectionCornerStyle {
     case rectangular, rounded
 }
 
-protocol DateCellStyleProvider {
+public protocol DateCellStyleProvider {
     
     var alternatingMonthBackgroundColor1: UIColor { get }
     var alternatingMonthBackgroundColor2: UIColor { get }
@@ -25,7 +25,7 @@ protocol DateCellStyleProvider {
     func applyRangeSelectionEndStyle(to cell: DateCollectionCell)
 }
 
-extension DateCellStyleProvider {
+public extension DateCellStyleProvider {
     
     var alternatingMonthBackgroundColor1: UIColor {
         return .white

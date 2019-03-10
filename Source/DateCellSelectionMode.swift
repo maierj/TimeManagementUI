@@ -8,6 +8,6 @@
 
 import Foundation
 
-enum DateCellSelectionMode {
+public enum DateCellSelectionMode {
     case none, single, rangeStart, rangeMiddle, rangeEnd
 }

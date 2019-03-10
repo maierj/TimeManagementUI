@@ -9,16 +9,16 @@
 import Foundation
 import UIKit
 
-class DateCollectionCell: UICollectionViewCell {
+public class DateCollectionCell: UICollectionViewCell {
     
-    let selectionIndicator: UIView
+    public let selectionIndicator: UIView
     
-    let monthLabel: UILabel
-    let dateLabel: UILabel
+    public let monthLabel: UILabel
+    public let dateLabel: UILabel
     
-    var state: DateCellState
+    public var state: DateCellState
     
-    override var isSelected: Bool {
+    override public var isSelected: Bool {
         get {
             return super.isSelected
         }

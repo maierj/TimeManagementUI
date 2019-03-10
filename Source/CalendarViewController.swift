@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class CalendarViewController: UIViewController {
+public class CalendarViewController: UIViewController {
     
     private let configuration: CalendarViewControllerConfiguration
     
@@ -51,7 +51,7 @@ class CalendarViewController: UIViewController {
     private var dragSessionFixedItemIndex: Int?
     private var dragSessionLastItemIndex: Int?
     
-    init(configuration: CalendarViewControllerConfiguration) {
+    public init(configuration: CalendarViewControllerConfiguration) {
         self.configuration = configuration
         
         let flowLayout = UICollectionViewFlowLayout()
@@ -236,15 +236,15 @@ class CalendarViewController: UIViewController {
 
 extension CalendarViewController: UICollectionViewDataSource {
     
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
+    public func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 40000
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let dateCell = collectionView.dequeueReusableCell(withReuseIdentifier: CalendarViewController.cellReuseIdentifier, for: indexPath) as? DateCollectionCell else {
             fatalError("Could not dequeue reusable cell for reuse identifier \(CalendarViewController.cellReuseIdentifier).")
         }
@@ -284,7 +284,7 @@ extension CalendarViewController: UICollectionViewDataSource {
 
 extension CalendarViewController: UICollectionViewDelegateFlowLayout {
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+    public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let standardColumnWidth = floor(view.frame.width / 7.0)
         let lastColumnWidth = view.frame.width - standardColumnWidth * 6.0
         
@@ -295,19 +295,19 @@ extension CalendarViewController: UICollectionViewDelegateFlowLayout {
         }
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+    public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+    public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 0.0
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+    public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 0.0
     }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let indexPathsForSelectedItems = collectionView.indexPathsForSelectedItems else {
             return
         }
@@ -338,7 +338,7 @@ extension CalendarViewController: UICollectionViewDelegateFlowLayout {
         }
     }
     
-    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+    public func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
         if let cell = collectionView.cellForItem(at: indexPath) as? DateCollectionCell {
             applyStyle(to: cell, at: indexPath)
         }

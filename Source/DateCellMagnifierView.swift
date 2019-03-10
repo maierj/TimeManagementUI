@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class DateCellMagnifierView: UIView {
+public class DateCellMagnifierView: UIView {
     
     let mainContainer: UIView
     let arrowView: UIView

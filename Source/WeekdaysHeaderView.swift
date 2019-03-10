@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class WeekdaysHeaderView: UIView {
+public class WeekdaysHeaderView: UIView {
     
     let stackView = UIStackView()
     

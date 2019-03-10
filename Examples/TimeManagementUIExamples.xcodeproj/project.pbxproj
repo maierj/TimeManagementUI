@@ -10,33 +10,51 @@
 		2C5AF0A822349D5B005DAE1C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C5AF0A422349D5B005DAE1C /* Assets.xcassets */; };
 		2C5AF0A922349D5B005DAE1C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C5AF0A522349D5B005DAE1C /* LaunchScreen.storyboard */; };
 		2C5AF0BB22349D69005DAE1C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5AF0AC22349D69005DAE1C /* MainViewController.swift */; };
-		2C5AF0BC22349D69005DAE1C /* DateCellSelectionMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5AF0AE22349D69005DAE1C /* DateCellSelectionMode.swift */; };
-		2C5AF0BD22349D69005DAE1C /* DateCellStyleProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5AF0AF22349D69005DAE1C /* DateCellStyleProvider.swift */; };
-		2C5AF0BE22349D69005DAE1C /* DateCellState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5AF0B022349D69005DAE1C /* DateCellState.swift */; };
-		2C5AF0BF22349D69005DAE1C /* CalendarViewControllerConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5AF0B122349D69005DAE1C /* CalendarViewControllerConfiguration.swift */; };
 		2C5AF0C022349D69005DAE1C /* ExampleDateCellStyleProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5AF0B222349D69005DAE1C /* ExampleDateCellStyleProvider.swift */; };
 		2C5AF0C122349D69005DAE1C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5AF0B322349D69005DAE1C /* AppDelegate.swift */; };
-		2C5AF0C222349D69005DAE1C /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5AF0B622349D69005DAE1C /* CalendarViewController.swift */; };
-		2C5AF0C322349D69005DAE1C /* DateCellMagnifierView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5AF0B822349D69005DAE1C /* DateCellMagnifierView.swift */; };
-		2C5AF0C422349D69005DAE1C /* WeekdaysHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5AF0B922349D69005DAE1C /* WeekdaysHeaderView.swift */; };
-		2C5AF0C522349D69005DAE1C /* DateCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5AF0BA22349D69005DAE1C /* DateCollectionCell.swift */; };
+		2CB9B466223527EA00BA4AB9 /* TimeManagementUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CB9B4632235274E00BA4AB9 /* TimeManagementUI.framework */; };
+		2CB9B467223527EA00BA4AB9 /* TimeManagementUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2CB9B4632235274E00BA4AB9 /* TimeManagementUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2CB9B4622235274E00BA4AB9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2CB9B45E2235274E00BA4AB9 /* TimeManagementUI.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 2C5AF0D02234A6F6005DAE1C;
+			remoteInfo = TimeManagementUI;
+		};
+		2CB9B468223527EA00BA4AB9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2CB9B45E2235274E00BA4AB9 /* TimeManagementUI.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 2C5AF0CF2234A6F6005DAE1C;
+			remoteInfo = TimeManagementUI;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		2CB9B46A223527EA00BA4AB9 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				2CB9B467223527EA00BA4AB9 /* TimeManagementUI.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		2C5AF0A422349D5B005DAE1C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2C5AF0A622349D5B005DAE1C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2C5AF0A722349D5B005DAE1C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2C5AF0AC22349D69005DAE1C /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		2C5AF0AE22349D69005DAE1C /* DateCellSelectionMode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateCellSelectionMode.swift; sourceTree = "<group>"; };
-		2C5AF0AF22349D69005DAE1C /* DateCellStyleProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateCellStyleProvider.swift; sourceTree = "<group>"; };
-		2C5AF0B022349D69005DAE1C /* DateCellState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateCellState.swift; sourceTree = "<group>"; };
-		2C5AF0B122349D69005DAE1C /* CalendarViewControllerConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewControllerConfiguration.swift; sourceTree = "<group>"; };
 		2C5AF0B222349D69005DAE1C /* ExampleDateCellStyleProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleDateCellStyleProvider.swift; sourceTree = "<group>"; };
 		2C5AF0B322349D69005DAE1C /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2C5AF0B622349D69005DAE1C /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
-		2C5AF0B822349D69005DAE1C /* DateCellMagnifierView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateCellMagnifierView.swift; sourceTree = "<group>"; };
-		2C5AF0B922349D69005DAE1C /* WeekdaysHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeekdaysHeaderView.swift; sourceTree = "<group>"; };
-		2C5AF0BA22349D69005DAE1C /* DateCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateCollectionCell.swift; sourceTree = "<group>"; };
+		2CB9B45E2235274E00BA4AB9 /* TimeManagementUI.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = TimeManagementUI.xcodeproj; path = ../TimeManagementUI.xcodeproj; sourceTree = "<group>"; };
 		2CD22636221F500600A2F030 /* TimeManagementUIExamples.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimeManagementUIExamples.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -45,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CB9B466223527EA00BA4AB9 /* TimeManagementUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,50 +84,18 @@
 			isa = PBXGroup;
 			children = (
 				2C5AF0AC22349D69005DAE1C /* MainViewController.swift */,
-				2C5AF0AD22349D69005DAE1C /* Models */,
+				2C5AF0B222349D69005DAE1C /* ExampleDateCellStyleProvider.swift */,
 				2C5AF0B322349D69005DAE1C /* AppDelegate.swift */,
-				2C5AF0B422349D69005DAE1C /* Views */,
 			);
 			path = Source;
 			sourceTree = "<group>";
 		};
-		2C5AF0AD22349D69005DAE1C /* Models */ = {
+		2CB9B45F2235274E00BA4AB9 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2C5AF0AE22349D69005DAE1C /* DateCellSelectionMode.swift */,
-				2C5AF0AF22349D69005DAE1C /* DateCellStyleProvider.swift */,
-				2C5AF0B022349D69005DAE1C /* DateCellState.swift */,
-				2C5AF0B122349D69005DAE1C /* CalendarViewControllerConfiguration.swift */,
-				2C5AF0B222349D69005DAE1C /* ExampleDateCellStyleProvider.swift */,
+				2CB9B4632235274E00BA4AB9 /* TimeManagementUI.framework */,
 			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		2C5AF0B422349D69005DAE1C /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				2C5AF0B522349D69005DAE1C /* ViewControllers */,
-				2C5AF0B722349D69005DAE1C /* Widgets */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		2C5AF0B522349D69005DAE1C /* ViewControllers */ = {
-			isa = PBXGroup;
-			children = (
-				2C5AF0B622349D69005DAE1C /* CalendarViewController.swift */,
-			);
-			path = ViewControllers;
-			sourceTree = "<group>";
-		};
-		2C5AF0B722349D69005DAE1C /* Widgets */ = {
-			isa = PBXGroup;
-			children = (
-				2C5AF0B822349D69005DAE1C /* DateCellMagnifierView.swift */,
-				2C5AF0B922349D69005DAE1C /* WeekdaysHeaderView.swift */,
-				2C5AF0BA22349D69005DAE1C /* DateCollectionCell.swift */,
-			);
-			path = Widgets;
+			name = Products;
 			sourceTree = "<group>";
 		};
 		2CD2262D221F500500A2F030 = {
@@ -117,6 +104,7 @@
 				2C5AF0A322349D5B005DAE1C /* Resources */,
 				2C5AF0AB22349D69005DAE1C /* Source */,
 				2CD22637221F500600A2F030 /* Products */,
+				2CB9B45E2235274E00BA4AB9 /* TimeManagementUI.xcodeproj */,
 			);
 			sourceTree = "<group>";
 		};
@@ -138,10 +126,12 @@
 				2CD22632221F500600A2F030 /* Sources */,
 				2CD22633221F500600A2F030 /* Frameworks */,
 				2CD22634221F500600A2F030 /* Resources */,
+				2CB9B46A223527EA00BA4AB9 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				2CB9B469223527EA00BA4AB9 /* PBXTargetDependency */,
 			);
 			name = TimeManagementUIExamples;
 			productName = TimeManagementUIExamples;
@@ -174,12 +164,28 @@
 			mainGroup = 2CD2262D221F500500A2F030;
 			productRefGroup = 2CD22637221F500600A2F030 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 2CB9B45F2235274E00BA4AB9 /* Products */;
+					ProjectRef = 2CB9B45E2235274E00BA4AB9 /* TimeManagementUI.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				2CD22635221F500600A2F030 /* TimeManagementUIExamples */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		2CB9B4632235274E00BA4AB9 /* TimeManagementUI.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = TimeManagementUI.framework;
+			remoteRef = 2CB9B4622235274E00BA4AB9 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		2CD22634221F500600A2F030 /* Resources */ = {
@@ -198,21 +204,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2C5AF0BD22349D69005DAE1C /* DateCellStyleProvider.swift in Sources */,
-				2C5AF0C522349D69005DAE1C /* DateCollectionCell.swift in Sources */,
 				2C5AF0BB22349D69005DAE1C /* MainViewController.swift in Sources */,
-				2C5AF0BF22349D69005DAE1C /* CalendarViewControllerConfiguration.swift in Sources */,
-				2C5AF0C222349D69005DAE1C /* CalendarViewController.swift in Sources */,
-				2C5AF0BE22349D69005DAE1C /* DateCellState.swift in Sources */,
-				2C5AF0C322349D69005DAE1C /* DateCellMagnifierView.swift in Sources */,
 				2C5AF0C122349D69005DAE1C /* AppDelegate.swift in Sources */,
 				2C5AF0C022349D69005DAE1C /* ExampleDateCellStyleProvider.swift in Sources */,
-				2C5AF0C422349D69005DAE1C /* WeekdaysHeaderView.swift in Sources */,
-				2C5AF0BC22349D69005DAE1C /* DateCellSelectionMode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2CB9B469223527EA00BA4AB9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = TimeManagementUI;
+			targetProxy = 2CB9B468223527EA00BA4AB9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		2C5AF0A522349D5B005DAE1C /* LaunchScreen.storyboard */ = {
@@ -345,6 +351,7 @@
 		2CD22649221F500800A2F030 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
@@ -364,6 +371,7 @@
 		2CD2264A221F500800A2F030 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;

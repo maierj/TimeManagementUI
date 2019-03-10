@@ -9,12 +9,17 @@
 import Foundation
 import UIKit
 
-struct CalendarViewControllerConfiguration {
+public struct CalendarViewControllerConfiguration {
     
-    enum DateSelectionMode {
+    public enum DateSelectionMode {
         case none, single(allowsMultipleSingleSelections: Bool), range(allowsMultipleRangeSelections: Bool)
     }
     
     let dateCellStyleProvider: DateCellStyleProvider
     let selectionMode: DateSelectionMode
+    
+    public init(dateCellStyleProvider: DateCellStyleProvider, selectionMode: DateSelectionMode) {
+        self.dateCellStyleProvider = dateCellStyleProvider
+        self.selectionMode = selectionMode
+    }
 }

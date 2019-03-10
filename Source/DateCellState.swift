@@ -8,12 +8,12 @@
 
 import Foundation
 
-class DateCellState {
+public class DateCellState {
     
-    let date: Date
-    let dateText: String
-    let monthText: String
-    let hasAlternatingColor: Bool
+    public let date: Date
+    public let dateText: String
+    public let monthText: String
+    public let hasAlternatingColor: Bool
     
     static let `default`: DateCellState = DateCellState(date: Date(), dateText: "", monthText: "", hasAlternatingColor: false)
     
