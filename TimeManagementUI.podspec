@@ -21,7 +21,7 @@ s.framework = "UIKit"
 s.dependency 'Alamofire', '~> 4.7'
 s.dependency 'MBProgressHUD', '~> 1.1.0'
 
-s.source_files = "TimeManagementUI/Source/*.{swift}"
+s.source_files = "Source/*.{swift}"
 
 s.swift_version = "4.2"
 
