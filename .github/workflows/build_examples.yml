@@ -1,0 +1,15 @@
+name: 'Build and release examples app'
+on: [push]
+
+jobs:
+  build_job:
+    runs-on: macOS
+    name: 'Build examples app'
+    steps:
+      - name: 'Source code checkout'
+        uses: actions/checkout@v1
+      - name: 'Build examples app'
+        uses: maierj/fastlane-action@v0.10.0
+        with:
+          lane: 
+          subdirectory: 'Examples'

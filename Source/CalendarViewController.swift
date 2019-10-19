@@ -10,21 +10,33 @@ import Foundation
 import UIKit
 
 public class CalendarViewController: UIViewController {
-    
+
+    /// The configuration that is currently applied to the CalendarViewController
     private let configuration: CalendarViewControllerConfiguration
     
     private let weekdaysHeaderView = WeekdaysHeaderView()
+
+    /// The main collection view that presents all date cells
     private let collectionView: UICollectionView
+
+    /**
+        The view that is visible if the range editing mode by dragging is active,
+        displays the date of the cell over which the drag is taking place
+    */
     private let dateMagnifierView = DateCellMagnifierView()
-    
+
+    /// The constraint that is used to position dateMagnifierView according to the current vertical drag position
     private var dateMagnifierBottomTopOffset: NSLayoutConstraint?
+
+    /// The constraint that is used to position dateMagnifierView according to the current horizontal drag position
     private var dateMagnifierCenterLeftOffset: NSLayoutConstraint?
     
     fileprivate static let cellReuseIdentifier = "DateCollectionCell"
-    fileprivate let startDate = Date()
     fileprivate let firstOfMonthOfStartDate: Date
     fileprivate let calendar = Calendar.current
     fileprivate let startDateIndexOffset: Int
+
+    private var selectedItemIndexes = Set<Int>()
     
     fileprivate let monthFormatter: DateFormatter = {
         let monthFormatter = DateFormatter()
@@ -43,9 +55,14 @@ public class CalendarViewController: UIViewController {
         dateFormatter.dateFormat = "dd.MM.yyyy"
         return dateFormatter
     }()
-    
-    private let longPressGestureRecongizer = UILongPressGestureRecognizer()
+
+    /// The recognizer that is used to detect and perform a range editing action by dragging
+    private let longPressGestureRecognizer = UILongPressGestureRecognizer()
+
+    /// The feedback generator that is used to signal the start of a range editing action by dragging
     private let impactFeedbackGenerator = UIImpactFeedbackGenerator()
+
+    /// The feedback generator that is used to signal a change in the range during a range editing action by dragging
     private let selectionFeedbackGenerator = UISelectionFeedbackGenerator()
     
     private var dragSessionFixedItemIndex: Int?
@@ -54,22 +71,22 @@ public class CalendarViewController: UIViewController {
     public init(configuration: CalendarViewControllerConfiguration) {
         self.configuration = configuration
         
-        let flowLayout = UICollectionViewFlowLayout()
+        let flowLayout = CalendarLayout()
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
         
-        let startDateWeekdayComponent = calendar.dateComponents([.weekday], from: startDate)
-        startDateIndexOffset = startDateWeekdayComponent.weekday! - 2
+        let startDateWeekdayComponent = calendar.dateComponents([.weekday], from: configuration.startDate)
+        startDateIndexOffset = startDateWeekdayComponent.weekday! - (configuration.startOfWeek == .monday ? 2 : 1)
         
-        let components = calendar.dateComponents([.year, .month], from: startDate)
+        let components = calendar.dateComponents([.year, .month], from: configuration.startDate)
         firstOfMonthOfStartDate = calendar.date(from: components)!
         
         super.init(nibName: nil, bundle: nil)
         
         if case .range = configuration.selectionMode {
-            longPressGestureRecongizer.addTarget(self, action: #selector(handleLongPress(gestureRecognizer:)))
-            longPressGestureRecongizer.minimumPressDuration = 0.5
+            longPressGestureRecognizer.addTarget(self, action: #selector(handleLongPress(gestureRecognizer:)))
+            longPressGestureRecognizer.minimumPressDuration = 0.5
             
-            collectionView.addGestureRecognizer(longPressGestureRecongizer)
+            collectionView.addGestureRecognizer(longPressGestureRecognizer)
         }
         
         setupSubviews()
@@ -80,7 +97,7 @@ public class CalendarViewController: UIViewController {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     private func setupSubviews() {
         view.backgroundColor = .white
         
@@ -145,7 +162,7 @@ public class CalendarViewController: UIViewController {
                 impactFeedbackGenerator.impactOccurred()
                 
                 if let cell = collectionView.cellForItem(at: indexPath) as? DateCollectionCell {
-                    dateMagnifierBottomTopOffset?.constant = position.y - 25
+                    dateMagnifierBottomTopOffset?.constant = position.y - 25 - collectionView.contentOffset.y
                     dateMagnifierCenterLeftOffset?.constant = position.x
                     dateMagnifierView.dateLabel.text = dateMagnifierFormatter.string(from: cell.state.date)
                 }
@@ -170,7 +187,7 @@ public class CalendarViewController: UIViewController {
                 return
             }
             
-            dateMagnifierBottomTopOffset?.constant = position.y - 25
+            dateMagnifierBottomTopOffset?.constant = position.y - 25 - collectionView.contentOffset.y
             dateMagnifierCenterLeftOffset?.constant = position.x
             
             if let cell = collectionView.cellForItem(at: indexPath) as? DateCollectionCell {
@@ -206,17 +223,21 @@ public class CalendarViewController: UIViewController {
             }
         } else if gestureRecognizer.state == .ended || gestureRecognizer.state == .cancelled || gestureRecognizer.state == .failed {
             dateMagnifierView.isHidden = true
+            dragSessionLastItemIndex = nil
+            dragSessionFixedItemIndex = nil
         }
         
         dragSessionLastItemIndex = indexPath.item
     }
     
     private func selectItems(from startItemIndex: Int, to endItemIndex: Int) {
+        debugPrint("selectItems(from: \(startItemIndex), to: \(endItemIndex))")
+
         let ascendingIteration = startItemIndex <= endItemIndex
         
         for itemIndex in stride(from: startItemIndex, through: endItemIndex, by: ascendingIteration ? 1 : -1) {
-            let indexPath = IndexPath(item: itemIndex, section: 0)
-            if !(collectionView.indexPathsForSelectedItems?.contains(indexPath) ?? false) {
+            if !selectedItemIndexes.contains(itemIndex) {
+                let indexPath = IndexPath(item: itemIndex, section: 0)
                 collectionView.selectItem(at: indexPath, animated: false, scrollPosition: [])
                 collectionView.delegate?.collectionView?(collectionView, didSelectItemAt: indexPath)
             }
@@ -224,9 +245,11 @@ public class CalendarViewController: UIViewController {
     }
     
     private func deselectItems(from startItemIndex: Int, to endItemIndex: Int) {
+        debugPrint("deselectItems(from: \(startItemIndex), to: \(endItemIndex))")
+
         for itemIndex in startItemIndex...endItemIndex {
-            let indexPath = IndexPath(item: itemIndex, section: 0)
-            if collectionView.indexPathsForSelectedItems?.contains(indexPath) ?? false {
+            if selectedItemIndexes.contains(itemIndex) {
+                let indexPath = IndexPath(item: itemIndex, section: 0)
                 collectionView.deselectItem(at: indexPath, animated: false)
                 collectionView.delegate?.collectionView?(collectionView, didDeselectItemAt: indexPath)
             }
@@ -241,7 +264,8 @@ extension CalendarViewController: UICollectionViewDataSource {
     }
     
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 40000
+        // Number of days between start and end date of the configuration
+        return Int(ceil(configuration.endDate.timeIntervalSince(configuration.startDate) / (60.0 * 60.0 * 24.0)))
     }
     
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -249,14 +273,14 @@ extension CalendarViewController: UICollectionViewDataSource {
             fatalError("Could not dequeue reusable cell for reuse identifier \(CalendarViewController.cellReuseIdentifier).")
         }
         
-        if indexPath.item > startDateIndexOffset {
+        if indexPath.item >= startDateIndexOffset {
             let startDateOffset = indexPath.item - startDateIndexOffset
             let dayIncrementComponent = DateComponents(day: startDateOffset)
             
-            guard let cellDate = calendar.date(byAdding: dayIncrementComponent, to: startDate) else {
+            guard let cellDate = calendar.date(byAdding: dayIncrementComponent, to: configuration.startDate) else {
                 fatalError("Could not calculate cell date by adding \(startDateOffset) days to start date.")
             }
-            
+
             let differenceComponents = calendar.dateComponents([.month, .day], from: firstOfMonthOfStartDate, to: cellDate)
             let daysOffset = differenceComponents.day!
             let monthOffset = differenceComponents.month!
@@ -311,14 +335,16 @@ extension CalendarViewController: UICollectionViewDelegateFlowLayout {
         guard let indexPathsForSelectedItems = collectionView.indexPathsForSelectedItems else {
             return
         }
+
+        selectedItemIndexes.insert(indexPath.item)
         
         if case .range(let allowsMultipleRangeSelections) = configuration.selectionMode,
             !allowsMultipleRangeSelections,
             indexPathsForSelectedItems.count > 1 {
-            let preceedingItemIndex = indexPath.item - 1
+            let precedingItemIndex = indexPath.item - 1
             let followingItemIndex = indexPath.item + 1
 
-            if !indexPathsForSelectedItems.contains(IndexPath(item: preceedingItemIndex, section: 0)),
+            if !indexPathsForSelectedItems.contains(IndexPath(item: precedingItemIndex, section: 0)),
                 !indexPathsForSelectedItems.contains(IndexPath(item: followingItemIndex, section: 0)) {
                 indexPathsForSelectedItems
                     .filter {
@@ -329,27 +355,35 @@ extension CalendarViewController: UICollectionViewDelegateFlowLayout {
                         collectionView.delegate?.collectionView?(collectionView, didDeselectItemAt: selectedIndexPath)
                     }
             }
-        }
-        
-        collectionView.indexPathsForSelectedItems?.forEach { selectedIndexPath in
-            if let cell = collectionView.cellForItem(at: selectedIndexPath) as? DateCollectionCell {
-                applyStyle(to: cell, at: selectedIndexPath)
+
+            collectionView.indexPathsForSelectedItems?.forEach { selectedIndexPath in
+                if let cell = collectionView.cellForItem(at: selectedIndexPath) as? DateCollectionCell {
+                    applyStyle(to: cell, at: selectedIndexPath)
+                }
             }
+        } else {
+            applyStyleToCellAndImmediateNeighbours(at: indexPath, in: collectionView)
         }
     }
     
     public func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        applyStyleToCellAndImmediateNeighbours(at: indexPath, in: collectionView)
+
+        selectedItemIndexes.remove(indexPath.item)
+    }
+
+    private func applyStyleToCellAndImmediateNeighbours(at indexPath: IndexPath, in collectionView: UICollectionView) {
         if let cell = collectionView.cellForItem(at: indexPath) as? DateCollectionCell {
             applyStyle(to: cell, at: indexPath)
         }
-        
-        let preceedingItemIndexPath = IndexPath(item: indexPath.item - 1, section: indexPath.section)
+
+        let precedingItemIndexPath = IndexPath(item: indexPath.item - 1, section: indexPath.section)
         let followingItemIndexPath = IndexPath(item: indexPath.item + 1, section: indexPath.section)
-        
-        if let preceedingCell = collectionView.cellForItem(at: preceedingItemIndexPath) as? DateCollectionCell {
-            applyStyle(to: preceedingCell, at: preceedingItemIndexPath)
+
+        if let precedingCell = collectionView.cellForItem(at: precedingItemIndexPath) as? DateCollectionCell {
+            applyStyle(to: precedingCell, at: precedingItemIndexPath)
         }
-        
+
         if let followingCell = collectionView.cellForItem(at: followingItemIndexPath) as? DateCollectionCell {
             applyStyle(to: followingCell, at: followingItemIndexPath)
         }
@@ -372,10 +406,10 @@ extension CalendarViewController: UICollectionViewDelegateFlowLayout {
     
     private func getSelectionMode(at indexPath: IndexPath) -> DateCellSelectionMode {
         if let indexPathsForSelectedItems = collectionView.indexPathsForSelectedItems, indexPathsForSelectedItems.contains(indexPath) {
-            let preceedingItemIndexPath = IndexPath(item: indexPath.item - 1, section: indexPath.section)
+            let precedingItemIndexPath = IndexPath(item: indexPath.item - 1, section: indexPath.section)
             let followingItemIndexPath = IndexPath(item: indexPath.item + 1, section: indexPath.section)
             
-            if indexPathsForSelectedItems.contains(preceedingItemIndexPath) {
+            if indexPathsForSelectedItems.contains(precedingItemIndexPath) {
                 if indexPathsForSelectedItems.contains(followingItemIndexPath) {
                     // Range selection middle
                     return .rangeMiddle

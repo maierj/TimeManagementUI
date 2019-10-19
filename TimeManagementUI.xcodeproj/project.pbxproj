@@ -16,6 +16,7 @@
 		2CB9B47622352A5900BA4AB9 /* DateCellMagnifierView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB9B47322352A5800BA4AB9 /* DateCellMagnifierView.swift */; };
 		2CB9B47722352A5900BA4AB9 /* WeekdaysHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB9B47422352A5900BA4AB9 /* WeekdaysHeaderView.swift */; };
 		2CB9B47822352A5900BA4AB9 /* DateCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB9B47522352A5900BA4AB9 /* DateCollectionCell.swift */; };
+		FFA75B5A29AB3FBA2BEC0423 /* CalendarLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA75B6A81500EEE789C71AA /* CalendarLayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		2CB9B47322352A5800BA4AB9 /* DateCellMagnifierView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateCellMagnifierView.swift; sourceTree = "<group>"; };
 		2CB9B47422352A5900BA4AB9 /* WeekdaysHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeekdaysHeaderView.swift; sourceTree = "<group>"; };
 		2CB9B47522352A5900BA4AB9 /* DateCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateCollectionCell.swift; sourceTree = "<group>"; };
+		FFA75B6A81500EEE789C71AA /* CalendarLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarLayout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 				2CB9B47322352A5800BA4AB9 /* DateCellMagnifierView.swift */,
 				2CB9B47422352A5900BA4AB9 /* WeekdaysHeaderView.swift */,
 				2CB9B47522352A5900BA4AB9 /* DateCollectionCell.swift */,
+				FFA75B6A81500EEE789C71AA /* CalendarLayout.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -127,6 +130,7 @@
 				TargetAttributes = {
 					2C5AF0CF2234A6F6005DAE1C = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 					};
 				};
 			};
@@ -136,6 +140,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 2C5AF0C62234A6F6005DAE1C;
 			productRefGroup = 2C5AF0D12234A6F6005DAE1C /* Products */;
@@ -170,6 +175,7 @@
 				2CB9B47822352A5900BA4AB9 /* DateCollectionCell.swift in Sources */,
 				2CB9B46C22352A3600BA4AB9 /* CalendarViewControllerConfiguration.swift in Sources */,
 				2CB9B47622352A5900BA4AB9 /* DateCellMagnifierView.swift in Sources */,
+				FFA75B5A29AB3FBA2BEC0423 /* CalendarLayout.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -318,7 +324,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = de.maierjonas.TimeManagementUI;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -343,7 +349,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = de.maierjonas.TimeManagementUI;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

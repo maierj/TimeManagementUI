@@ -21,8 +21,11 @@ class MainViewController: UIViewController {
     
     init() {
         let calendarViewControllerConfiguration = CalendarViewControllerConfiguration(
+            startDate: Date(),
+            endDate: Calendar.current.date(byAdding: DateComponents(year: 1), to: Date())!,
             dateCellStyleProvider: ExampleDateCellStyleProvider(),
-            selectionMode: .range(allowsMultipleRangeSelections: true)
+            selectionMode: .range(allowsMultipleRangeSelections: true),
+            startOfWeek: .monday
         )
         calendarVC = CalendarViewController(configuration: calendarViewControllerConfiguration)
         

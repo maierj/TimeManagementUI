@@ -14,12 +14,32 @@ public struct CalendarViewControllerConfiguration {
     public enum DateSelectionMode {
         case none, single(allowsMultipleSingleSelections: Bool), range(allowsMultipleRangeSelections: Bool)
     }
-    
+
+    public enum StartOfWeek {
+        case sunday, monday
+    }
+
+    let startDate: Date
+    let endDate: Date
     let dateCellStyleProvider: DateCellStyleProvider
     let selectionMode: DateSelectionMode
+    let startOfWeek: StartOfWeek
     
-    public init(dateCellStyleProvider: DateCellStyleProvider, selectionMode: DateSelectionMode) {
+    public init(
+            startDate: Date,
+            endDate: Date,
+            dateCellStyleProvider: DateCellStyleProvider,
+            selectionMode: DateSelectionMode,
+            startOfWeek: StartOfWeek = .monday
+    ) {
+        self.startDate = startDate
+        self.endDate = endDate
         self.dateCellStyleProvider = dateCellStyleProvider
         self.selectionMode = selectionMode
+        self.startOfWeek = startOfWeek
+
+        if endDate.timeIntervalSince(startDate) < 0 {
+            fatalError("Calendar start date has to be before end date.")
+        }
     }
 }
