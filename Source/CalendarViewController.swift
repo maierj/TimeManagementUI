@@ -231,8 +231,6 @@ public class CalendarViewController: UIViewController {
     }
     
     private func selectItems(from startItemIndex: Int, to endItemIndex: Int) {
-        debugPrint("selectItems(from: \(startItemIndex), to: \(endItemIndex))")
-
         let ascendingIteration = startItemIndex <= endItemIndex
         
         for itemIndex in stride(from: startItemIndex, through: endItemIndex, by: ascendingIteration ? 1 : -1) {
@@ -245,8 +243,6 @@ public class CalendarViewController: UIViewController {
     }
     
     private func deselectItems(from startItemIndex: Int, to endItemIndex: Int) {
-        debugPrint("deselectItems(from: \(startItemIndex), to: \(endItemIndex))")
-
         for itemIndex in startItemIndex...endItemIndex {
             if selectedItemIndexes.contains(itemIndex) {
                 let indexPath = IndexPath(item: itemIndex, section: 0)
@@ -265,7 +261,7 @@ extension CalendarViewController: UICollectionViewDataSource {
     
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // Number of days between start and end date of the configuration
-        return Int(ceil(configuration.endDate.timeIntervalSince(configuration.startDate) / (60.0 * 60.0 * 24.0)))
+        return Int(ceil(configuration.endDate.timeIntervalSince(configuration.startDate) / (60.0 * 60.0 * 24.0))) + startDateIndexOffset
     }
     
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

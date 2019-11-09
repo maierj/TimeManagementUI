@@ -13,3 +13,5 @@ jobs:
         with:
           lane: 'build_examples'
           subdirectory: 'Examples'
+        env:
+          APP_CENTER_TOKEN: ${{ secrets.APP_CENTER_TOKEN }}

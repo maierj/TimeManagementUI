@@ -19,6 +19,13 @@ platform :ios do
   desc "Utility to build and distribute the TimeManagementUI examples app"
 
   lane :build_examples do
-		build_ios_app(scheme: "TimeManagementUIExamples", project: "TimeManagementUIExamples.xcodeproj")
+	build_ios_app(scheme: "TimeManagementUIExamples", project: "TimeManagementUIExamples.xcodeproj")
+	
+	appcenter_upload(
+		api_token: ENV["APP_CENTER_TOKEN"],
+  		owner_name: "maierj",
+  		app_name: "TimeManagementUI-Examples",
+  		file: ""
+	)		
   end
 end
